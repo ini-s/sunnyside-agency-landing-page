@@ -12,7 +12,7 @@ body {
 
 .home {
     position: relative;
-    height: 500px;
+    height: 700px;
 }
 
 .contact,
@@ -411,15 +411,15 @@ footer a:hover {
     .main-nav {
         display: none;
     }
+
+    .down-arrow {
+        top: 25rem;
+    }
 }
 
 @media screen and (max-width: 375px) {
     header {
         padding: 2rem 1.5rem;
-    }
-
-    .down-arrow {
-        top: 15rem;
     }
 
     .top {
@@ -436,9 +436,6 @@ footer a:hover {
 }
 
 @media screen and (max-width: 300px) {
-    .down-arrow {
-        top: 15rem;
-    }
 
     .top h1 {
         font-size: 1.8rem;

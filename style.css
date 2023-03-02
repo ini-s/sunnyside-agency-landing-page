@@ -74,6 +74,7 @@ a {
 
 .open-menu {
     display: none;
+    cursor: pointer;
 }
 
 .side-nav {
@@ -217,6 +218,8 @@ a {
 
 .gallery .text {
     padding: 3rem 2rem;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .cherry,
@@ -363,6 +366,43 @@ footer a:hover {
     }
 }
 
+
+@media screen and (min-width: 740px) {
+    .gallery .text {
+        text-align: left;
+    }
+
+    .mobile-header,
+    .mobile-img,
+    .egg {
+        display: none;
+    }
+
+    .desktop-img {
+        display: block;
+    }
+
+    .desktop-header,
+    .egg2 {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 740px) and (max-width: 767px) {
+    .gallery .text {
+        padding: 1.8rem 2rem;
+    }
+}
+
+
+@media screen and (min-width: 740px) and (max-width: 969px) {
+
+    .cherry-text,
+    .orange-text {
+        bottom: -0.5rem !important;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .open-menu {
         display: block;
@@ -419,35 +459,15 @@ footer a:hover {
 
 @media screen and (min-width: 767px) {
     .home {
-        height: 600px;
+        height: 700px;
     }
 
-    .mobile-header,
-    .mobile-img,
-    .egg {
-        display: none;
-    }
-
-    .desktop-img {
-        display: block;
-    }
-
-    .desktop-header,
-    .egg2 {
-        display: block;
+    .gallery p {
+        padding-bottom: 3rem;
     }
 
     br {
         display: none;
-    }
-
-    .down-arrow {
-        top: 16rem;
-    }
-
-    .gallery .text {
-        text-align: left;
-        padding: 0 4rem;
     }
 
     .testimonials {
@@ -487,6 +507,10 @@ footer a:hover {
     .gallery p,
     .learn-more {
         font-size: 1.2rem;
+    }
+
+    .down-arrow {
+        top: 19.5rem;
     }
 }
 

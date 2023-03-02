@@ -1,5 +1,3 @@
-/* font-family: 'Barlow', sans-serif; */
-/* font-family: 'Fraunces', serif; */
 * {
     margin: 0;
     padding: 0;
@@ -27,9 +25,9 @@ h3,
 
 header {
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 2rem;
+    padding: 2rem 1.5rem;
 }
 
 button {
@@ -57,12 +55,21 @@ a {
     color: hsl(0, 0%, 100%);
 }
 
+.main-nav ul li a:hover {
+    color: hsla(0, 0%, 100%, 0.623);
+}
+
 .contact {
     color: black;
     background-color: hsl(0, 0%, 100%);
     font-weight: 500;
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
+}
+
+.contact:hover {
+    background-color: hsla(0, 0%, 100%, 0.454);
+    color: hsl(0, 0%, 100%);
 }
 
 .open-menu {
@@ -73,7 +80,7 @@ a {
     display: none;
     padding: 1rem 0;
     position: absolute;
-    top: 6rem;
+    top: 7rem;
     background-color: hsl(0, 0%, 100%);
     width: 90%;
     text-align: center;
@@ -102,8 +109,27 @@ a {
     background-color: hsl(51, 100%, 49%);
 }
 
+.triangle {
+    border: 1.7rem solid hsl(0, 0%, 100%);
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: hsl(0, 0%, 100%);
+    border-bottom-color: transparent;
+    position: absolute;
+    top: -1.5rem;
+    right: 0;
+}
+
 .mobile-header {
     display: block;
+}
+
+.desktop-header {
+    display: none;
+}
+
+.mobile-header,
+.desktop-header {
     position: absolute;
     top: 0;
     left: 0;
@@ -113,18 +139,10 @@ a {
     z-index: -1;
 }
 
-.desktop-header {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    object-fit: cover;
-}
 
 .down-arrow {
     position: absolute;
-    top: 21rem;
+    top: 18rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -141,8 +159,28 @@ a {
     letter-spacing: 0.3rem;
 }
 
-.gallery img {
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    align-items: center;
+}
+
+.mobile-img,
+.desktop-img {
     width: 100%;
+    object-fit: cover;
+}
+
+.mobile-img {
+    display: block;
+}
+
+.desktop-img {
+    display: none;
+}
+
+.egg2 {
+    display: none;
 }
 
 .gallery,
@@ -153,6 +191,28 @@ a {
 
 .learn-more {
     font-weight: 700;
+    position: relative;
+}
+
+.more ::before {
+    content: "";
+    height: 0.7rem;
+    width: 110%;
+    border-radius: 10px;
+    position: absolute;
+    bottom: -2px;
+    left: -6px;
+    opacity: 0.3;
+    z-index: -1;
+    background-color: hsl(51, 100%, 49%);
+}
+
+.red-more ::before {
+    background-color: hsl(7, 99%, 70%);
+}
+
+.more:hover ::before {
+    opacity: 1;
 }
 
 .gallery .text {
@@ -164,16 +224,12 @@ a {
     position: relative;
 }
 
-.cherry img,
-.orange img {
-    display: block;
-}
 
 .cherry-text,
 .orange-text {
     position: absolute;
     padding: 0 1rem;
-    bottom: 2rem;
+    bottom: 0.5rem;
 }
 
 .cherry-text {
@@ -215,10 +271,17 @@ h2 {
     font-size: 1rem;
 }
 
+.col-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
 .testimonials img {
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     object-fit: cover;
     margin-bottom: 2rem;
 }
@@ -234,7 +297,8 @@ h4 {
 }
 
 .col {
-    padding-top: 3rem;
+    padding-top: 1rem;
+    flex-basis: 1fr;
 }
 
 .bottom-gallery {
@@ -247,41 +311,46 @@ h4 {
 }
 
 .bottom-gallery img {
-    width:100%; 
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-footer{
+footer {
     background-color: hsl(167, 43%, 72%);
     color: hsl(168, 34%, 41%);
     text-align: center;
     padding: 3.5rem 2rem;
 }
 
-.footer-logo{
-    color:hsl(168, 34%, 41%);
-}
-
-footer a{
+.footer-logo {
     color: hsl(168, 34%, 41%);
-    font-weight: 600;
 }
 
-footer ul{
-    display:flex;
+footer a {
+    color: hsl(168, 34%, 41%);
+}
+
+footer ul {
+    display: flex;
     justify-content: space-between;
     list-style: none;
     padding-bottom: 4.5rem;
 }
 
-.footer-logo{
+.footer-logo {
     margin-bottom: 2rem;
 }
 
-.footer-icons img{
+.footer-icons img {
     padding: 0 0.7rem;
+    cursor: pointer;
 }
+
+footer a:hover {
+    color: hsl(0, 0%, 100%);
+}
+
 @media screen and (max-width: 1200px) {
     .main-nav {
         width: 40%;
@@ -310,7 +379,19 @@ footer ul{
     }
 
     .down-arrow {
-        top: 17rem;
+        top: 15rem;
+    }
+
+    .top {
+        padding: 1rem;
+    }
+
+    .top h1 {
+        font-size: 2rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
     }
 }
 
@@ -318,14 +399,99 @@ footer ul{
     .down-arrow {
         top: 15rem;
     }
-}
-
-@media screen and (max-width: 375px) {
-    .top {
-        padding: 1rem;
-    }
 
     .top h1 {
+        font-size: 1.8rem;
+    }
+
+    .side-nav {
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 300px) {
+
+    .cherry-text,
+    .orange-text {
+        bottom: 2rem;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .home {
+        height: 600px;
+    }
+
+    .mobile-header,
+    .mobile-img,
+    .egg {
+        display: none;
+    }
+
+    .desktop-img {
+        display: block;
+    }
+
+    .desktop-header,
+    .egg2 {
+        display: block;
+    }
+
+    br {
+        display: none;
+    }
+
+    .down-arrow {
+        top: 16rem;
+    }
+
+    .gallery .text {
+        text-align: left;
+        padding: 0 4rem;
+    }
+
+    .testimonials {
+        padding-block: 10rem;
+    }
+
+    .testimonials h2 {
+        font-size: 1.5rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .col-container {
+        padding-top: 1rem;
+    }
+
+    .col {
+        flex-basis: 200px;
+    }
+
+    footer ul {
+        justify-content: center;
+        gap: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    h2 {
         font-size: 2rem;
+    }
+
+    .gallery p,
+    .learn-more {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .col {
+        flex-basis: 320px;
     }
 }

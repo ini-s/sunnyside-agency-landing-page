@@ -28,6 +28,9 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 2rem 1.5rem;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
 }
 
 button {
@@ -53,6 +56,7 @@ a {
 
 .main-nav ul li a {
     color: hsl(0, 0%, 100%);
+    transition: 0.4s ease;
 }
 
 .main-nav ul li a:hover {
@@ -65,6 +69,8 @@ a {
     font-weight: 500;
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
+    cursor: pointer;
+    transition: 0.4s ease;
 }
 
 .contact:hover {
@@ -121,14 +127,6 @@ a {
     right: 0;
 }
 
-.mobile-header {
-    display: block;
-}
-
-.desktop-header {
-    display: none;
-}
-
 .mobile-header,
 .desktop-header {
     position: absolute;
@@ -151,37 +149,20 @@ a {
 .top {
     text-align: center;
     color: hsl(0, 0%, 100%);
-    padding: 2rem;
+    padding: 8rem 2rem 0 2rem;
 }
 
-.top h1 {
+h1 {
     font-size: 2.5rem;
     padding-top: 2rem;
     letter-spacing: 0.3rem;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    align-items: center;
 }
 
 .mobile-img,
 .desktop-img {
     width: 100%;
     object-fit: cover;
-}
-
-.mobile-img {
     display: block;
-}
-
-.desktop-img {
-    display: none;
-}
-
-.egg2 {
-    display: none;
 }
 
 .gallery,
@@ -206,6 +187,7 @@ a {
     opacity: 0.3;
     z-index: -1;
     background-color: hsl(51, 100%, 49%);
+    transition: 0.4s ease;
 }
 
 .red-more ::before {
@@ -217,9 +199,9 @@ a {
 }
 
 .gallery .text {
-    padding: 3rem 2rem;
-    max-width: 500px;
     margin: 0 auto;
+    position: relative;
+    padding: 3rem 2rem;
 }
 
 .cherry,
@@ -372,26 +354,6 @@ footer a:hover {
         text-align: left;
     }
 
-    .mobile-header,
-    .mobile-img,
-    .egg {
-        display: none;
-    }
-
-    .desktop-img {
-        display: block;
-    }
-
-    .desktop-header,
-    .egg2 {
-        display: block;
-    }
-}
-
-@media screen and (min-width: 740px) and (max-width: 767px) {
-    .gallery .text {
-        padding: 1.8rem 2rem;
-    }
 }
 
 
@@ -423,15 +385,11 @@ footer a:hover {
     }
 
     .top {
-        padding: 1rem;
+        padding: 7rem 1rem;
     }
 
     .top h1 {
         font-size: 2rem;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
     }
 }
 
@@ -455,12 +413,26 @@ footer a:hover {
 }
 
 @media screen and (min-width: 767px) {
-    .home {
-        height: 700px;
-    }
-
     .gallery p {
         padding-bottom: 3rem;
+    }
+
+    .gallery .text {
+        padding: 2rem;
+    }
+
+    .flex-container {
+        display: flex;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .row1 {
+        flex-direction: row-reverse;
+    }
+
+    .flex-item {
+        flex-basis: 50%;
     }
 
     br {
@@ -488,15 +460,25 @@ footer a:hover {
         justify-content: center;
         gap: 2.5rem;
     }
+
 }
 
-@media screen and (max-width: 1000px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+@media screen and (min-width:800px) {
+    .gallery .text {
+        padding: 0 3rem;
+    }
+
+    .text-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 400px;
     }
 }
 
 @media screen and (min-width: 1000px) {
+
     h2 {
         font-size: 2rem;
     }
